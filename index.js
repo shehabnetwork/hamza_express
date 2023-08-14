@@ -9,9 +9,10 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 
 
-app.get('/', (request, response) => {
+app.get('/home/:n', (request, response) => {
+    const name = request.params.n;
     response.render('index', {
-
+        userName: name,
     });
 });
 
